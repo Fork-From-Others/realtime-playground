@@ -53,16 +53,7 @@ async def entrypoint(ctx: JobContext):
 
     # create a chat context with chat history
     chat_ctx = llm.ChatContext()
-    chat_ctx.append(text="I'm planning a trip to Paris next month.", role="user")
-    chat_ctx.append(
-        text="How exciting! Paris is a beautiful city. I'd be happy to suggest some must-visit places and help you plan your trip.",
-        role="assistant",
-    )
-    chat_ctx.append(text="What are the must-visit places in Paris?", role="user")
-    chat_ctx.append(
-        text="The must-visit places in Paris are the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and Montmartre.",
-        role="assistant",
-    )
+    chat_ctx.append(text="请全程用中文和我对话", role="user")
 
     agent = multimodal.MultimodalAgent(
         model=openai.realtime.RealtimeModel(
